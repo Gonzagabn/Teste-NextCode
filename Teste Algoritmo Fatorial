@@ -1,24 +1,24 @@
-Algoritmo "Fatorial"
+//Algoritmo "Fatorial"
 //Luiz Gonzaga - ORDDUM
+import 'dart:io';
+main() {
+  int entrada = 0;
 
-//Principal
-inicio  {
-int entrada
-escreva("\n######## Calculadora de Fatorial ########")
-escreva("\n\nDigite o número inteiro que deseja calcular seu fatorial: ")
-leia (entrada)
-escreva("\n\nO fatorial do número é: ", fatorial(entrada))
-} fim
+  print("\n######## Calculadora de Fatorial ########");
+  print("\nDigite o número inteiro que deseja calcular seu fatorial:\n");
+  entrada = int.parse(stdin.readLineSync()!);
+  print("\nO fatorial do número é: " + fatorial(entrada)!.toString() + '\n');
+}
 
 //Função Fatorial
-var funcao fatorial(int numero) {
-  se (numero >= 0) {
-    se (numero == 1 || numero == 0) {
-      retorne 1
-    } senao {
-      retorne numero * fatorial(numero - 1)
+dynamic fatorial(int? numero) {
+  if (numero! >= 0) {
+    if (numero == 1 || numero == 0) {
+      return 1;
+    } else {
+      return numero * fatorial(numero - 1);
     }
-  } senao {
-    retorne "Não existe fatorial de números negativos!"
+  } else {
+    return "\n\nNão existe fatorial de números negativos!";
   }
 }
